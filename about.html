@@ -2,21 +2,66 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About — Enock Stephano</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="description" content="Enock Stephano — Web Developer & Instructor. Building modern web experiences and teaching the next generation of developers." />
+  <title>Enock Stephano — Web Developer & Instructor</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
   <style>
-    /* Fallback to ensure content is visible if JS fails */
-    .reveal-card, .reveal-fade {
-      opacity: 1 !important;
-      transform: translateY(0) !important;
+    /* Hero split layout for desktop */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+    .hero-content {
+      flex: 1;
+      max-width: 50%;
+      z-index: 2;
+    }
+    .hero-animation {
+      flex: 1;
+      position: relative;
+      height: 500px;
+      max-width: 50%;
+      z-index: 2;
+      overflow: hidden;
+    }
+    #heroCanvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    /* Mobile adjustments: hide custom canvas animation, stack content */
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+      }
+      .hero-content {
+        max-width: 100%;
+        width: 100%;
+        padding-right: 0;
+      }
+      .hero-animation {
+        display: none; /* completely hide the heavy canvas on phones */
+      }
+      /* Adjust stats for smaller screens */
+      .hero-stats {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+      }
+      .hero-cta {
+        justify-content: center;
+      }
     }
   </style>
 </head>
 <body>
+
   <div class="cursor" id="cursor"></div>
   <div class="cursor-follower" id="cursorFollower"></div>
   <div class="transition-overlay" id="transitionOverlay">
@@ -32,13 +77,13 @@
       </a>
     </div>
     <ul class="nav-links">
-      <li><a href="index.html" class="nav-link" data-page="home">Home</a></li>
-      <li><a href="about.html" class="nav-link active" data-page="about">About</a></li>
+      <li><a href="index.html" class="nav-link active" data-page="home">Home</a></li>
+      <li><a href="about.html" class="nav-link" data-page="about">About</a></li>
       <li><a href="skills.html" class="nav-link" data-page="skills">Skills</a></li>
       <li><a href="experience.html" class="nav-link" data-page="experience">Experience</a></li>
       <li><a href="contact.html" class="nav-link contact-btn" data-page="contact">Contact</a></li>
     </ul>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
   </nav>
 
   <div class="mobile-menu" id="mobileMenu">
@@ -46,170 +91,48 @@
   </div>
 
   <div data-barba="wrapper">
-    <main data-barba="container" data-barba-namespace="about">
-
-      <section class="page-hero">
-        <div class="container">
-          <span class="page-eyebrow reveal-fade">About Me</span>
-          <h1 class="page-title reveal-text">
-            <span class="line-wrap"><span class="hero-line">Developer.</span></span>
-            <span class="line-wrap"><span class="hero-line">Educator.</span></span>
-            <span class="line-wrap"><span class="hero-line hero-line--accent">Innovator.</span></span>
+    <main data-barba="container" data-barba-namespace="home">
+      <section class="hero" id="hero">
+        <div class="hero-bg"><canvas id="particleCanvas"></canvas></div>
+        <div class="hero-content">
+          <div class="hero-eyebrow"><span class="terminal-dot"></span><span class="terminal-text" id="terminalText"></span></div>
+          <h1 class="hero-title">
+            <span class="line-wrap"><span class="hero-line">Hi, I'm</span></span>
+            <span class="line-wrap"><span class="hero-name">Enock</span></span>
+            <span class="line-wrap"><span class="hero-line hero-line--accent">Stephano</span></span>
           </h1>
-        </div>
-        <div class="page-hero-line"></div>
-      </section>
-
-      <section class="about-intro section-pad">
-        <div class="container">
-          <div class="about-grid">
-            <div class="about-visual">
-              <div class="about-avatar">
-                <div class="avatar-inner">
-                  <div class="avatar-glow"></div>
-                  <div class="avatar-initials">ES</div>
-                  <div class="avatar-ring"></div>
-                </div>
-                <div class="avatar-badge">
-                  <span class="badge-dot"></span>
-                  Available for Projects
-                </div>
-              </div>
-              <div class="about-quick-facts">
-                <div class="fact">
-                  <span class="fact-label">Location</span>
-                  <span class="fact-value">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline; margin-right: 6px; vertical-align: middle;">
-                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                      <circle cx="12" cy="10" r="3"/>
-                    </svg>
-                    Tanzania
-                  </span>
-                </div>
-                <div class="fact">
-                  <span class="fact-label">Role</span>
-                  <span class="fact-value">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline; margin-right: 6px; vertical-align: middle;">
-                      <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
-                    </svg>
-                    Developer & Instructor
-                  </span>
-                </div>
-                <div class="fact">
-                  <span class="fact-label">Status</span>
-                  <span class="fact-value status-open">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline; margin-right: 6px; vertical-align: middle;">
-                      <circle cx="12" cy="12" r="10"/>
-                      <path d="M12 8v4l3 3"/>
-                    </svg>
-                    Open to work
-                  </span>
-                </div>
-                <div class="fact">
-                  <span class="fact-label">Currently Learning</span>
-                  <span class="fact-value">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline; margin-right: 6px; vertical-align: middle;">
-                      <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
-                      <line x1="12" y1="18" x2="12.01" y2="18"/>
-                    </svg>
-                    Flutter
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div class="about-body">
-              <h2 class="section-title reveal-text">Hello, I'm Enock Stephano</h2>
-              <div class="about-text">
-                <p>I'm a passionate Web Developer and Web Development Instructor dedicated to creating impactful digital experiences through clean code, modern technologies, and continuous learning.</p>
-                <p>I currently serve as a Web Development Teacher at <strong>Sokoine Vocational Training College</strong>, where I help students build strong foundations in web technologies and software development. Teaching allows me to share knowledge, inspire future developers, and stay connected to the latest trends in technology.</p>
-                <p>Alongside teaching, I work as a Web Developer at <strong>Luso Software Solution</strong>, where I contribute to designing, developing, and maintaining web-based systems that help organizations improve efficiency and achieve their goals.</p>
-              </div>
-              <div class="about-actions">
-                <a href="experience.html" class="btn btn--primary magnetic"><span>View Experience</span></a>
-                <a href="contact.html" class="btn btn--ghost magnetic"><span>Get in Touch</span></a>
-              </div>
-            </div>
+          <p class="hero-subtitle">Web Developer · Web Development Instructor · Future Mobile App Developer</p>
+          <div class="hero-cta">
+            <a href="about.html" class="btn btn--primary magnetic"><span>Explore My Work</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+            <a href="contact.html" class="btn btn--ghost magnetic"><span>Let's Talk</span></a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat"><span class="stat-number" data-count="3">0</span><span class="stat-label">Years Experience</span></div>
+            <div class="stat-divider"></div>
+            <div class="stat"><span class="stat-number" data-count="20">0</span><span class="stat-label">Students Mentored</span></div>
+            <div class="stat-divider"></div>
+            <div class="stat"><span class="stat-number" data-count="10">0</span><span class="stat-label">Projects Built</span></div>
           </div>
         </div>
-      </section>
-
-      <section class="mission-vision section-pad">
-        <div class="container">
-          <div class="mv-grid">
-            <div class="mv-card">
-              <div class="mv-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <circle cx="12" cy="12" r="10"/>
-                  <line x1="12" y1="8" x2="12" y2="12"/>
-                  <line x1="12" y1="16" x2="12.01" y2="16"/>
-                </svg>
-              </div>
-              <h3>My Mission</h3>
-              <p>To use technology and education to create meaningful impact. I believe that technology can solve real-world problems, empower businesses, and create opportunities for people to grow and succeed.</p>
-            </div>
-            <div class="mv-card">
-              <div class="mv-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
-                </svg>
-              </div>
-              <h3>My Vision</h3>
-              <p>To become a highly skilled Full-Stack Developer and Mobile Application Developer, building innovative solutions that improve lives while inspiring the next generation of developers.</p>
-            </div>
-          </div>
+        <div class="hero-animation">
+          <canvas id="heroCanvas"></canvas>
         </div>
+        <div class="hero-scroll"><div class="scroll-line"></div><span>Scroll</span></div>
       </section>
 
-      <section class="beyond-coding section-pad">
-        <div class="container">
-          <span class="section-eyebrow">Beyond the Screen</span>
-          <h2 class="section-title reveal-text">What Drives Me</h2>
-          <div class="interests-grid">
-            <div class="interest-item">
-              <span class="interest-icon">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <circle cx="12" cy="12" r="3"/>
-                  <path d="M22 12c0 5.52-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2s10 4.48 10 10z"/>
-                </svg>
-              </span>
-              <p>Exploring new technologies</p>
-            </div>
-            <div class="interest-item">
-              <span class="interest-icon">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
-                  <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
-                </svg>
-              </span>
-              <p>Learning software engineering trends</p>
-            </div>
-            <div class="interest-item">
-              <span class="interest-icon">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <path d="M9 12h6m-6 4h6m2-10H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2z"/>
-                </svg>
-              </span>
-              <p>Building personal challenge projects</p>
-            </div>
-            <div class="interest-item">
-              <span class="interest-icon">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                  <circle cx="9" cy="7" r="4"/>
-                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                  <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                </svg>
-              </span>
-              <p>Mentoring aspiring developers</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <!-- Quick About -->
+      <section class="quick-about section-pad"><div class="container"><div class="qa-grid"><div class="qa-text"><span class="section-eyebrow">Who I Am</span><h2 class="section-title reveal-text">Passionate developer.<br>Dedicated educator.</h2><p class="qa-desc reveal-fade">I'm <strong>Enock Stephano</strong>, a Web Developer and Instructor based in Tanzania, shaping the next generation of developers at Sokoine Vocational Training College while building real-world software solutions at Luso Software Solution.</p><a href="about.html" class="link-arrow magnetic"><span>Learn more about me</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div><div class="qa-cards"><div class="role-card reveal-card"><div class="role-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><h3>Web Developer</h3><p>Building scalable, responsive web applications with modern technologies.</p></div><div class="role-card reveal-card"><div class="role-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div><h3>Instructor</h3><p>Empowering students with real-world coding skills and problem-solving ability.</p></div><div class="role-card reveal-card"><div class="role-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div><h3>Flutter Learner</h3><p>Expanding into cross-platform mobile development.</p></div></div></div></div></section>
 
-      <footer class="footer-note">
-        <p>© 2025 Enock Stephano — Built with curiosity & dedication</p>
-      </footer>
+      <!-- Skills Preview -->
+      <section class="skills-preview section-pad"><div class="container"><div class="sp-header"><span class="section-eyebrow">Tech Stack</span><h2 class="section-title reveal-text">Tools I Work With</h2></div><div class="tech-marquee"><div class="marquee-track"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Python</span><span>Git</span><span>GitHub</span><span>VS Code</span><span>Flutter</span><span>Responsive Design</span><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Python</span><span>Git</span><span>GitHub</span><span>VS Code</span><span>Flutter</span><span>Responsive Design</span></div></div><div class="skills-cta reveal-fade"><a href="skills.html" class="btn btn--outline magnetic">View All Skills</a></div></div></section>
 
+      <!-- Mission Banner -->
+      <section class="mission-banner"><div class="mission-inner"><div class="mission-text"><span class="mission-quote">"</span><p class="reveal-text">Technology can solve real-world problems, empower businesses, and create opportunities for people to grow and succeed.</p><span class="mission-quote mission-quote--end">"</span></div></div></section>
+
+      <!-- GitHub Corner -->
+      <section class="section-pad" style="padding: 2rem 0 4rem;"><div class="container" style="text-align: center;"><a href="https://github.com/enockdeghost" target="_blank" rel="noopener noreferrer" class="btn btn--ghost magnetic" style="gap: 0.8rem;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg><span>Check my GitHub</span></a></div></section>
+
+      <footer class="footer-note"><p>© 2025 Enock Stephano — Built with curiosity & dedication</p></footer>
     </main>
   </div>
 
@@ -219,5 +142,119 @@
   <script src="https://cdn.jsdelivr.net/npm/@barba/core@2.9.7/dist/barba.umd.js"></script>
   <script src="js/particles.js"></script>
   <script src="js/main.js"></script>
+
+  <!-- Custom canvas animation for desktop only (hidden on mobile via CSS) -->
+  <script>
+    (function() {
+      const canvas = document.getElementById('heroCanvas');
+      if (!canvas) return;
+      // Only run on desktop (width > 768)
+      function isDesktop() { return window.innerWidth > 768; }
+      if (!isDesktop()) return;
+
+      const ctx = canvas.getContext('2d');
+      let width, height;
+      let symbols = [];
+      let mouseX = width/2, mouseY = height/2;
+      let time = 0;
+      
+      const symbolSet = ['{', '}', '(', ')', '<', '>', '/', '>', ';', '=>', '[]', '/*', '*/', '#', '$', '@', '&', '=', '!', '?', '...', '++', '--', '::', '||', '&&'];
+      
+      function resize() {
+        const container = canvas.parentElement;
+        width = container.clientWidth;
+        height = container.clientHeight;
+        canvas.width = width;
+        canvas.height = height;
+        initSymbols();
+      }
+      
+      class FloatingSymbol {
+        constructor() { this.reset(); this.z = Math.random() * 100; }
+        reset() {
+          this.x = Math.random() * width;
+          this.y = Math.random() * height;
+          this.symbol = symbolSet[Math.floor(Math.random() * symbolSet.length)];
+          this.size = Math.random() * 24 + 16;
+          this.speedX = (Math.random() - 0.5) * 0.3;
+          this.speedY = (Math.random() - 0.5) * 0.3;
+          this.rotation = Math.random() * Math.PI * 2;
+          this.rotSpeed = (Math.random() - 0.5) * 0.02;
+          this.glow = Math.random() * 0.5 + 0.3;
+          this.hue = Math.random() * 60 + 180;
+        }
+        update() {
+          this.x += this.speedX;
+          this.y += this.speedY;
+          this.rotation += this.rotSpeed;
+          const dx = this.x - mouseX, dy = this.y - mouseY, dist = Math.sqrt(dx*dx + dy*dy);
+          if (dist < 120) {
+            const angle = Math.atan2(dy, dx), force = (120 - dist) / 120 * 1.5;
+            this.x += Math.cos(angle) * force;
+            this.y += Math.sin(angle) * force;
+          }
+          if (this.x < -50) this.x = width + 50;
+          if (this.x > width + 50) this.x = -50;
+          if (this.y < -50) this.y = height + 50;
+          if (this.y > height + 50) this.y = -50;
+          if (Math.random() < 0.005) this.symbol = symbolSet[Math.floor(Math.random() * symbolSet.length)];
+        }
+        draw() {
+          ctx.save();
+          ctx.translate(this.x, this.y);
+          ctx.rotate(this.rotation);
+          ctx.font = `${this.size}px 'JetBrains Mono', 'Space Grotesk', monospace`;
+          ctx.shadowBlur = 12;
+          ctx.shadowColor = `hsla(${this.hue}, 100%, 65%, 0.8)`;
+          ctx.fillStyle = `hsla(${this.hue}, 85%, 65%, ${0.7 + Math.sin(time * 0.5 + this.x) * 0.2})`;
+          ctx.fillText(this.symbol, -this.size/3, this.size/3);
+          ctx.restore();
+        }
+      }
+      
+      function initSymbols() {
+        symbols = [];
+        const count = Math.min(35, Math.floor((width * height) / 8000));
+        for (let i = 0; i < count; i++) symbols.push(new FloatingSymbol());
+      }
+      
+      function drawConnections() {
+        for (let i = 0; i < symbols.length; i++) {
+          for (let j = i+1; j < symbols.length; j++) {
+            const dx = symbols[i].x - symbols[j].x, dy = symbols[i].y - symbols[j].y, dist = Math.sqrt(dx*dx + dy*dy);
+            if (dist < 150 && dist > 20) {
+              ctx.beginPath();
+              ctx.moveTo(symbols[i].x, symbols[i].y);
+              ctx.lineTo(symbols[j].x, symbols[j].y);
+              ctx.strokeStyle = `rgba(0, 212, 255, ${0.15 * (1 - dist/150)})`;
+              ctx.lineWidth = 1;
+              ctx.stroke();
+            }
+          }
+        }
+      }
+      
+      function animate() {
+        if (!ctx) return;
+        ctx.clearRect(0, 0, width, height);
+        for (let s of symbols) { s.update(); s.draw(); }
+        drawConnections();
+        time += 0.02;
+        requestAnimationFrame(animate);
+      }
+      
+      window.addEventListener('resize', () => { resize(); });
+      canvas.addEventListener('mousemove', (e) => {
+        const rect = canvas.getBoundingClientRect();
+        const scaleX = canvas.width / rect.width, scaleY = canvas.height / rect.height;
+        mouseX = (e.clientX - rect.left) * scaleX;
+        mouseY = (e.clientY - rect.top) * scaleY;
+      });
+      canvas.addEventListener('mouseleave', () => { mouseX = width/2; mouseY = height/2; });
+      
+      resize();
+      animate();
+    })();
+  </script>
 </body>
 </html>
