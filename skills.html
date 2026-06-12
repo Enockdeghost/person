@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skills — Enock Stephano</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+  <div class="transition-overlay" id="transitionOverlay">
+    <div class="transition-lines">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+  </div>
+
+  <nav class="nav" id="mainNav">
+    <div class="nav-logo" data-barba-prevent="self">
+      <a href="index.html" class="logo-link">
+        <span class="logo-bracket">&lt;</span>
+        <span class="logo-name">Enock</span>
+        <span class="logo-bracket">/&gt;</span>
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-link" data-page="home">Home</a></li>
+      <li><a href="about.html" class="nav-link" data-page="about">About</a></li>
+      <li><a href="skills.html" class="nav-link active" data-page="skills">Skills</a></li>
+      <li><a href="experience.html" class="nav-link" data-page="experience">Experience</a></li>
+      <li><a href="contact.html" class="nav-link contact-btn" data-page="contact">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+
+  <div data-barba="wrapper">
+    <main data-barba="container" data-barba-namespace="skills">
+
+      <section class="page-hero">
+        <div class="container">
+          <span class="page-eyebrow reveal-fade">Technical Arsenal</span>
+          <!-- Added reveal-text class to fix hidden title -->
+          <h1 class="page-title reveal-text">
+            <span class="line-wrap"><span class="hero-line">What I</span></span>
+            <span class="line-wrap"><span class="hero-line hero-line--accent">Bring to the Table</span></span>
+          </h1>
+        </div>
+        <div class="page-hero-line"></div>
+      </section>
+
+      <section class="skills-main section-pad">
+        <div class="container">
+
+          <!-- Frontend Skills -->
+          <div class="skill-category reveal-card">
+            <div class="sc-header">
+              <div class="sc-icon sc-icon--frontend">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                  <line x1="8" y1="21" x2="16" y2="21"></line>
+                  <line x1="12" y1="17" x2="12" y2="21"></line>
+                </svg>
+              </div>
+              <div>
+                <span class="sc-label">Proficient in</span>
+                <h2 class="sc-title">Frontend Development</h2>
+              </div>
+            </div>
+            <div class="skill-bars">
+              <div class="skill-bar-item">
+                <div class="sb-info"><span class="sb-name">HTML5 / CSS3</span><span class="sb-pct">95%</span></div>
+                <div class="sb-track"><div class="sb-fill" style="width:95%"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="sb-info"><span class="sb-name">JavaScript (ES6+)</span><span class="sb-pct">88%</span></div>
+                <div class="sb-track"><div class="sb-fill" style="width:88%"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="sb-info"><span class="sb-name">Responsive Design</span><span class="sb-pct">92%</span></div>
+                <div class="sb-track"><div class="sb-fill" style="width:92%"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Backend Skills -->
+          <div class="skill-category reveal-card">
+            <div class="sc-header">
+              <div class="sc-icon sc-icon--backend">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M4 7h16M4 12h16M4 17h10"></path>
+                  <rect x="2" y="3" width="20" height="18" rx="2" ry="2"></rect>
+                </svg>
+              </div>
+              <div>
+                <span class="sc-label">Building logic</span>
+                <h2 class="sc-title">Backend & Programming</h2>
+              </div>
+            </div>
+            <div class="skill-bars">
+              <div class="skill-bar-item">
+                <div class="sb-info"><span class="sb-name">Python</span><span class="sb-pct">85%</span></div>
+                <div class="sb-track"><div class="sb-fill" style="width:85%"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="sb-info"><span class="sb-name">Git & GitHub</span><span class="sb-pct">82%</span></div>
+                <div class="sb-track"><div class="sb-fill" style="width:82%"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mobile (Learning) -->
+          <div class="skill-category reveal-card">
+            <div class="sc-header">
+              <div class="sc-icon sc-icon--mobile">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                  <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                </svg>
+              </div>
+              <div>
+                <span class="sc-label">Currently learning</span>
+                <h2 class="sc-title">Mobile Development</h2>
+              </div>
+            </div>
+            <div class="skill-bars">
+              <div class="skill-bar-item">
+                <div class="sb-info"><span class="sb-name">Flutter (Dart)</span><span class="sb-pct">45%</span></div>
+                <div class="sb-track"><div class="sb-fill" style="width:45%"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="sb-info"><span class="sb-name">UI/UX Principles</span><span class="sb-pct">70%</span></div>
+                <div class="sb-track"><div class="sb-fill" style="width:70%"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tools & Technologies (Pills) -->
+          <div class="skill-category reveal-card">
+            <div class="sc-header">
+              <div class="sc-icon sc-icon--tools">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+                </svg>
+              </div>
+              <div>
+                <span class="sc-label">Everyday tools</span>
+                <h2 class="sc-title">Technologies & Workflow</h2>
+              </div>
+            </div>
+            <div class="skill-pills">
+              <span class="skill-pill"><span class="pill-dot"></span>VS Code</span>
+              <span class="skill-pill"><span class="pill-dot"></span>Git/GitHub</span>
+              <span class="skill-pill"><span class="pill-dot"></span>Figma</span>
+              <span class="skill-pill"><span class="pill-dot"></span>Chrome DevTools</span>
+              <span class="skill-pill"><span class="pill-dot"></span>npm</span>
+              <span class="skill-pill learning"><span class="pill-dot"></span>Firebase <span class="pill-badge">Learning</span></span>
+              <span class="skill-pill learning"><span class="pill-dot"></span>Node.js <span class="pill-badge">Learning</span></span>
+            </div>
+          </div>
+
+          <!-- Soft Skills (Pills) -->
+          <div class="skill-category reveal-card">
+            <div class="sc-header">
+              <div class="sc-icon sc-icon--tools">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+              <div>
+                <span class="sc-label">Beyond code</span>
+                <h2 class="sc-title">Soft Skills</h2>
+              </div>
+            </div>
+            <div class="skill-pills">
+              <span class="skill-pill"><span class="pill-dot"></span>Team Collaboration</span>
+              <span class="skill-pill"><span class="pill-dot"></span>Problem Solving</span>
+              <span class="skill-pill"><span class="pill-dot"></span>Mentoring</span>
+              <span class="skill-pill"><span class="pill-dot"></span>Communication</span>
+              <span class="skill-pill"><span class="pill-dot"></span>Time Management</span>
+              <span class="skill-pill"><span class="pill-dot"></span>Adaptability</span>
+            </div>
+          </div>
+
+          <!-- Why Me section -->
+          <div class="why-section" style="margin-top: 5rem;">
+            <span class="section-eyebrow">Why Choose Me</span>
+            <h2 class="section-title reveal-text">Beyond the <span style="color:var(--cyan)">Resume</span></h2>
+            <div class="why-grid">
+              <div class="why-item reveal-card">
+                <span class="why-num">01</span>
+                <h3>Teaching Experience</h3>
+                <p>I don't just write code — I explain it, making complex topics accessible and easy to understand.</p>
+              </div>
+              <div class="why-item reveal-card">
+                <span class="why-num">02</span>
+                <h3>Real-World Projects</h3>
+                <p>Experience in both educational and software company environments gives me practical insight into what works.</p>
+              </div>
+              <div class="why-item reveal-card">
+                <span class="why-num">03</span>
+                <h3>Continuous Learner</h3>
+                <p>Currently diving into Flutter to build cross-platform mobile apps — I never stop growing.</p>
+              </div>
+              <div class="why-item reveal-card">
+                <span class="why-num">04</span>
+                <h3>Problem Solver</h3>
+                <p>I approach every challenge with curiosity and persistence, finding solutions that make sense.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Call to action -->
+          <div class="skills-cta" style="margin-top: 4rem; text-align: center;">
+            <a href="contact.html" class="btn btn--primary magnetic"><span>Start a Project</span></a>
+          </div>
+
+        </div>
+      </section>
+
+      <footer class="footer-note">
+        <p>© 2025 Enock Stephano — Built with curiosity & dedication</p>
+      </footer>
+
+    </main>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@barba/core@2.9.7/dist/barba.umd.js"></script>
+  <script src="js/particles.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

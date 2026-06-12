@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Enock Stephano</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* Fallback to ensure content is visible if JS fails */
+    .reveal-card, .reveal-fade {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+    }
+  </style>
+</head>
+<body>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+  <div class="transition-overlay" id="transitionOverlay">
+    <div class="transition-lines"><span></span><span></span><span></span><span></span><span></span></div>
+  </div>
+
+  <nav class="nav" id="mainNav">
+    <div class="nav-logo" data-barba-prevent="self">
+      <a href="index.html" class="logo-link">
+        <span class="logo-bracket">&lt;</span>
+        <span class="logo-name">Enock</span>
+        <span class="logo-bracket">/&gt;</span>
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-link" data-page="home">Home</a></li>
+      <li><a href="about.html" class="nav-link active" data-page="about">About</a></li>
+      <li><a href="skills.html" class="nav-link" data-page="skills">Skills</a></li>
+      <li><a href="experience.html" class="nav-link" data-page="experience">Experience</a></li>
+      <li><a href="contact.html" class="nav-link contact-btn" data-page="contact">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="skills.html">Skills</a></li><li><a href="experience.html">Experience</a></li><li><a href="contact.html">Contact</a></li></ul>
+  </div>
+
+  <div data-barba="wrapper">
+    <main data-barba="container" data-barba-namespace="about">
+
+      <section class="page-hero">
+        <div class="container">
+          <span class="page-eyebrow reveal-fade">About Me</span>
+          <h1 class="page-title reveal-text">
+            <span class="line-wrap"><span class="hero-line">Developer.</span></span>
+            <span class="line-wrap"><span class="hero-line">Educator.</span></span>
+            <span class="line-wrap"><span class="hero-line hero-line--accent">Innovator.</span></span>
+          </h1>
+        </div>
+        <div class="page-hero-line"></div>
+      </section>
+
+      <section class="about-intro section-pad">
+        <div class="container">
+          <div class="about-grid">
+            <div class="about-visual">
+              <div class="about-avatar">
+                <div class="avatar-inner">
+                  <div class="avatar-glow"></div>
+                  <div class="avatar-initials">ES</div>
+                  <div class="avatar-ring"></div>
+                </div>
+                <div class="avatar-badge">
+                  <span class="badge-dot"></span>
+                  Available for Projects
+                </div>
+              </div>
+              <div class="about-quick-facts">
+                <div class="fact">
+                  <span class="fact-label">Location</span>
+                  <span class="fact-value">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline; margin-right: 6px; vertical-align: middle;">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                      <circle cx="12" cy="10" r="3"/>
+                    </svg>
+                    Tanzania
+                  </span>
+                </div>
+                <div class="fact">
+                  <span class="fact-label">Role</span>
+                  <span class="fact-value">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline; margin-right: 6px; vertical-align: middle;">
+                      <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+                    </svg>
+                    Developer & Instructor
+                  </span>
+                </div>
+                <div class="fact">
+                  <span class="fact-label">Status</span>
+                  <span class="fact-value status-open">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline; margin-right: 6px; vertical-align: middle;">
+                      <circle cx="12" cy="12" r="10"/>
+                      <path d="M12 8v4l3 3"/>
+                    </svg>
+                    Open to work
+                  </span>
+                </div>
+                <div class="fact">
+                  <span class="fact-label">Currently Learning</span>
+                  <span class="fact-value">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline; margin-right: 6px; vertical-align: middle;">
+                      <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+                      <line x1="12" y1="18" x2="12.01" y2="18"/>
+                    </svg>
+                    Flutter
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="about-body">
+              <h2 class="section-title reveal-text">Hello, I'm Enock Stephano</h2>
+              <div class="about-text">
+                <p>I'm a passionate Web Developer and Web Development Instructor dedicated to creating impactful digital experiences through clean code, modern technologies, and continuous learning.</p>
+                <p>I currently serve as a Web Development Teacher at <strong>Sokoine Vocational Training College</strong>, where I help students build strong foundations in web technologies and software development. Teaching allows me to share knowledge, inspire future developers, and stay connected to the latest trends in technology.</p>
+                <p>Alongside teaching, I work as a Web Developer at <strong>Luso Software Solution</strong>, where I contribute to designing, developing, and maintaining web-based systems that help organizations improve efficiency and achieve their goals.</p>
+              </div>
+              <div class="about-actions">
+                <a href="experience.html" class="btn btn--primary magnetic"><span>View Experience</span></a>
+                <a href="contact.html" class="btn btn--ghost magnetic"><span>Get in Touch</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mission-vision section-pad">
+        <div class="container">
+          <div class="mv-grid">
+            <div class="mv-card">
+              <div class="mv-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <circle cx="12" cy="12" r="10"/>
+                  <line x1="12" y1="8" x2="12" y2="12"/>
+                  <line x1="12" y1="16" x2="12.01" y2="16"/>
+                </svg>
+              </div>
+              <h3>My Mission</h3>
+              <p>To use technology and education to create meaningful impact. I believe that technology can solve real-world problems, empower businesses, and create opportunities for people to grow and succeed.</p>
+            </div>
+            <div class="mv-card">
+              <div class="mv-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+                </svg>
+              </div>
+              <h3>My Vision</h3>
+              <p>To become a highly skilled Full-Stack Developer and Mobile Application Developer, building innovative solutions that improve lives while inspiring the next generation of developers.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="beyond-coding section-pad">
+        <div class="container">
+          <span class="section-eyebrow">Beyond the Screen</span>
+          <h2 class="section-title reveal-text">What Drives Me</h2>
+          <div class="interests-grid">
+            <div class="interest-item">
+              <span class="interest-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <circle cx="12" cy="12" r="3"/>
+                  <path d="M22 12c0 5.52-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2s10 4.48 10 10z"/>
+                </svg>
+              </span>
+              <p>Exploring new technologies</p>
+            </div>
+            <div class="interest-item">
+              <span class="interest-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                  <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                </svg>
+              </span>
+              <p>Learning software engineering trends</p>
+            </div>
+            <div class="interest-item">
+              <span class="interest-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M9 12h6m-6 4h6m2-10H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2z"/>
+                </svg>
+              </span>
+              <p>Building personal challenge projects</p>
+            </div>
+            <div class="interest-item">
+              <span class="interest-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                  <circle cx="9" cy="7" r="4"/>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                </svg>
+              </span>
+              <p>Mentoring aspiring developers</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer-note">
+        <p>© 2025 Enock Stephano — Built with curiosity & dedication</p>
+      </footer>
+
+    </main>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@barba/core@2.9.7/dist/barba.umd.js"></script>
+  <script src="js/particles.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
